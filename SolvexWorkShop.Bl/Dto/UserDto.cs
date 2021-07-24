@@ -1,0 +1,23 @@
+﻿using SolvexWorkShop.Core.BaseModel;
+using SolvexWorkShop.Core.Enums;
+using System;
+
+namespace SolvexWorkShop.Bl.Dto
+{
+    public class UserDto : BaseEntityDto
+    {
+        public string Name { get; set; }
+        public string MiddleName { get; set; }
+        public string LastName { get; set; }
+        public string SecondLastName { get; set; }
+        public Gender Gender { get; set; }
+        public DateTime? Dob { get; set; }
+        public DocumentType DocumentType { get; set; }
+        public string DocumentTypeValue { get; set; }
+        public int? PhotoId { get; set; }
+        public string PhotoFileName { get; set; }
+
+        public string UserName { get; set; }
+        public string Password { get; set; }
+    }
+}
