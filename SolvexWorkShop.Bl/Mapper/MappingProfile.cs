@@ -2,7 +2,7 @@
 using SolvexWorkshop.Model.Entities;
 using SolvexWorkShop.Bl.Dto;
 
-namespace GenericApi.Bl.Mapper
+namespace SolvexWorkShop.Bl.Mapper
 {
     public class MappingProfile : Profile
     {
