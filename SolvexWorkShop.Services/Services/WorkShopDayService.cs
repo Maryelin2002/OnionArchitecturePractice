@@ -3,11 +3,6 @@ using FluentValidation;
 using SolvexWorkshop.Model.Entities;
 using SolvexWorkshop.Model.Repositories;
 using SolvexWorkShop.Bl.Dto;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SolvexWorkShop.Services.Services
 {
