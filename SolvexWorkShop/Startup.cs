@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using SolvexWorkshop.Model.IoC;
 using SolvexWorkShop.Bl.Config;
 using SolvexWorkShop.Config;
+using SolvexWorkShop.Services.IoC;
 
 namespace SolvexWorkShop
 {
@@ -21,20 +22,23 @@ namespace SolvexWorkShop
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
 
             #region External Dependencies Config
 
             services.ConfigSqlServerDbContext(Configuration.GetConnectionString("DefaultConnection"));
-            services.AddControllers(options => options.EnableEndpointRouting = false).ConfigFluentValidation();
+            services.AddControllers(options => options.EnableEndpointRouting = false)
+                .ConfigFluentValidation();
             services.ConfigAutoMapper();
             services.AddAppOData();
+            services.ConfigSerilog();
 
             #endregion
 
             #region App Registries
 
             services.AddModelRegistry();
+            services.AddServiceRegistry();
+
             #endregion
 
             #region Api Libraries
@@ -42,6 +46,7 @@ namespace SolvexWorkShop
             services.AddSwagger();
 
             #endregion
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
