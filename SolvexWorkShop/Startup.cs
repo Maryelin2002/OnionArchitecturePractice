@@ -51,6 +51,7 @@ namespace SolvexWorkShop
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseAppSwagger();
 
             app.UseHttpsRedirection();
 
