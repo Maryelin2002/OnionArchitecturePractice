@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using SolvexWorkshop.Model.IoC;
 using SolvexWorkShop.Bl.Config;
 using SolvexWorkShop.Config;
+using SolvexWorkShop.Core.Settings;
 using SolvexWorkShop.Services.IoC;
 
 namespace SolvexWorkShop
@@ -22,14 +23,37 @@ namespace SolvexWorkShop
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            #region App Settings
 
-            #region External Dependencies Config
+            services.Configure<JwtSettings>(Configuration.GetSection("JwtSettings"));
+
+            #endregion
+
+            #region CORS
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("MainPolicy",
+                    builder =>
+                    {
+                        builder
+                            .AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .AllowCredentials();
+
+                        //TODO: remove this line for production
+                        builder.SetIsOriginAllowed(x => true);
+                    });
+            });
+
+            #endregion
+
+            #region External Dependencies
 
             services.ConfigSqlServerDbContext(Configuration.GetConnectionString("DefaultConnection"));
             services.AddControllers(options => options.EnableEndpointRouting = false)
                 .ConfigFluentValidation();
             services.ConfigAutoMapper();
-            services.AddAppOData();
             services.ConfigSerilog();
 
             #endregion
@@ -41,9 +65,11 @@ namespace SolvexWorkShop
 
             #endregion
 
-            #region Api Libraries
+            #region API Libraries
 
-            services.AddSwagger();
+            services.ConfigJwtAuth(Configuration);
+            services.ConfigOData();
+            services.ConfigSwagger();
 
             #endregion
 
