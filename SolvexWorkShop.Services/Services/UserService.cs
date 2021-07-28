@@ -53,9 +53,10 @@ namespace SolvexWorkShop.Services.Services
             if (user is null)
                 return null;
 
-            bool validPassword = ValidatePassword(user.Password, model.Password);
+            var isValidPassword = ValidatePassword(user.Password, model.Password);
 
-            if (!validPassword) return null;
+            if (isValidPassword is false)
+                return null;
 
             var response = new AuthenticateResponseDto
             {
@@ -109,18 +110,15 @@ namespace SolvexWorkShop.Services.Services
         public override async Task<IEntityOperationResult<UserDto>> AddAsync(UserDto dto)
         {
             var validationResult = _validator.Validate(dto);
+
             if (validationResult.IsValid is false)
                 return validationResult.ToOperationResult<UserDto>();
 
-            string passwordForEncryption = "12345";
-            string userPassword = dto.Password;
+            var entity = _mapper.Map<User>(dto);
 
-            string encryptedPassword = StringCipher.Encrypt(userPassword, passwordForEncryption);
+            entity.Password = EncodePassword(dto.Password);
 
-            dto.Password = encryptedPassword;
-
-            User user = _mapper.Map<User>(dto);
-            var entityResult = await _repository.Add(user);
+            var entityResult = await _repository.Add(entity);
 
             _mapper.Map(entityResult, dto);
 
@@ -128,14 +126,16 @@ namespace SolvexWorkShop.Services.Services
             return result;
         }
 
-        private bool ValidatePassword(string userPassword, string modelPassword)
+        private string EncodePassword(string password)
         {
-            string passwordForDecryption = "12345";
-            string decyptedPassword = StringCipher.Decrypt(userPassword, passwordForDecryption);
+            string passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
+            return passwordHash;
+        }
 
-            bool validPassword = (decyptedPassword == modelPassword);
-
-            return validPassword;
+        private bool ValidatePassword(string passwordHash, string password)
+        {
+            bool verified = BCrypt.Net.BCrypt.Verify(password, passwordHash);
+            return verified;
         }
     }
 }

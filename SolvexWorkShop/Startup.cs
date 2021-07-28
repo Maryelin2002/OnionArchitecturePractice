@@ -89,12 +89,12 @@ namespace SolvexWorkShop
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseCors("MainPolicy");
+
+            app.UseMvc(routeBuilder => routeBuilder.UseAppOData());
         }
     }
 }
