@@ -19,9 +19,6 @@ namespace SolvexWorkShop.Bl.Validations
             RuleFor(x => x.Gender)
                 .NotEmpty()
                 .WithMessage("Member's Gender is required");
-            RuleFor(x => x.PhotoFileName)
-                .NotEmpty()
-                .WithMessage("Member's PhotoFileName is required");
         }
     }
 }
