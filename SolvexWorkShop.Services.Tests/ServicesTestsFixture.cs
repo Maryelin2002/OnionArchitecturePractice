@@ -113,7 +113,6 @@ namespace SolvexWorkShop.Services.Tests
 
         public void Dispose()
         {
-            Dispose();
         }
     }
 }
