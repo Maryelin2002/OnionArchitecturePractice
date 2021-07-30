@@ -8,19 +8,19 @@ namespace SolvexWorkShop.Bl.Validations
         public WorkShopDayValidator()
         {
             RuleFor(x => x.Day)
-                .Empty()
+                .NotNull()
                 .WithMessage("WorkShopDay's Day is required");
             RuleFor(x => x.Mode)
-                .Empty()
+                .NotNull()
                 .WithMessage("WorkShopDay's Mode is required");
             RuleFor(x => x.ModeLocation)
-                .Empty()
+                .NotNull()
                 .WithMessage("WorkShopDay's ModeLocation is required");
             RuleFor(x => x.StartHour)
-                .Empty()
+                .NotNull()
                 .WithMessage("WorkShopDay's StartHour is required");
             RuleFor(x => x.WorkShopId)
-                .Empty()
+                .NotNull()
                 .WithMessage("WorkShopDay's WorkShopId is required");
         }
     }

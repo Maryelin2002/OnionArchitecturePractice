@@ -9,14 +9,14 @@ namespace SolvexWorkShop.Bl.Validations
         {
             RuleFor(x => x.Name)
                 .MinimumLength(10)
-                .WithMessage("WorkShop's name length must be at least 10 characters")
+                .WithMessage("WorkShop's Name length must be at least 10 characters")
                 .NotEmpty()
-                .WithMessage("WorkShop's name is required");
+                .WithMessage("WorkShop's Name is required");
             RuleFor(x => x.Description)
                 .MaximumLength(150)
-                .WithMessage("WorkShop's description length must be less then 150 characters")
+                .WithMessage("WorkShop's Description must be less then 150 characters")
                 .NotEmpty()
-                .WithMessage("WorkShop's description is required");
+                .WithMessage("WorkShop's Description is required");
             RuleFor(x => x.StartDate)
                 .NotEmpty()
                 .WithMessage("WorkShop's StartDate is required");

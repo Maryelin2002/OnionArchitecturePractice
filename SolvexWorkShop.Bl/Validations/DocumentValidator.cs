@@ -8,10 +8,10 @@ namespace SolvexWorkShop.Bl.Validations
         public DocumentValidator()
         {
             RuleFor(x => x.FileName)
-                .MinimumLength(10)
-                .WithMessage("Document's length must be at least 10 characters")
+                .MinimumLength(5)
+                .WithMessage("Document's FileName length must be at least 5 characters")
                 .NotEmpty()
-                .WithMessage("Document's filename is required");
+                .WithMessage("Document's FileName is required");
         }
     }
 }

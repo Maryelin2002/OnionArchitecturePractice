@@ -8,7 +8,7 @@ namespace SolvexWorkShop.Bl.Validations
         public WorkShopMemberValidator()
         {
             RuleFor(x => x.Role)
-                .NotEmpty()
+                .NotNull()
                 .WithMessage("WorkShopMember's Role is required");
             RuleFor(x => x.WorkShopId)
                 .NotEmpty()
