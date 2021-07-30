@@ -70,7 +70,7 @@ namespace SolvexWorkShop.Services.Tests
             //Assert
             Assert.True(result.IsSuccess, result.Errors.FirstOrDefault());
             Assert.NotNull(result.Entity);
-            Assert.Equal(requestDto.FileName, result.Entity.FileName);
+            Assert.Equal(requestDto.Id, result.Entity.Id);
         }
 
         [Fact]
