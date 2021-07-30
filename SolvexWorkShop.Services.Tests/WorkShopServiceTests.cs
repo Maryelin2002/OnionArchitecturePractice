@@ -11,12 +11,9 @@ namespace SolvexWorkShop.Services.Tests
     public class WorkShopServiceTests : IClassFixture<ServicesTestsFixture>
     {
         private readonly IWorkShopService _workShopService;
-        private readonly ServicesTestsFixture _fixture;
 
         public WorkShopServiceTests(ServicesTestsFixture fixture)
         {
-            _fixture = fixture;
-
             IWorkShopRepository repository = new WorkShopRepository(fixture.Context);
 
             var validator = new WorkShopValidator();

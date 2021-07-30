@@ -9,7 +9,7 @@ using System;
 
 namespace SolvexWorkShop.Services.Tests
 {
-    public class ServicesTestsFixture
+    public class ServicesTestsFixture : IDisposable
     {
         public readonly User _emmanuel = new User
         {
@@ -111,5 +111,9 @@ namespace SolvexWorkShop.Services.Tests
 
         }
 
+        public void Dispose()
+        {
+            Dispose();
+        }
     }
 }

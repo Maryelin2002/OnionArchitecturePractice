@@ -55,14 +55,14 @@ namespace SolvexWorkShop.Services.Tests
         public async Task ShouldGetUserToken()
         {
             //Arrange
-            var model = new AuthenticateRequestDto
+            var requestDto = new AuthenticateRequestDto
             {
                 UserName = "maryelinram",
-                Password = "marye1234"
+                Password = "Hola1234"
             };
 
             //Act
-            var result = await _userService.GetToken(model);
+            var result = await _userService.GetToken(requestDto);
 
             //Assert
             Assert.NotNull(result);
