@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 
-namespace Solve.Bl.Config
+namespace SolvexWorkShop.Bl.Config
 {
     public static class SerilogConfig
     {

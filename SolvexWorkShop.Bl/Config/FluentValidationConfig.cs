@@ -1,6 +1,6 @@
 ﻿using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
-using SolvexWorkShop.Bl.Validators;
+using SolvexWorkShop.Bl.Validations;
 
 namespace SolvexWorkShop.Bl.Config
 {
@@ -11,7 +11,7 @@ namespace SolvexWorkShop.Bl.Config
             builder.AddFluentValidation(x =>
             {
                 x.AutomaticValidationEnabled = false;
-                x.RegisterValidatorsFromAssemblyContaining<DocumentValidator>();
+                x.RegisterValidatorsFromAssemblyContaining<WorkShopValidator>();
             });
             return builder;
         }

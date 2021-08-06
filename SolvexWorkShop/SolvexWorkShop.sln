@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolvexWorkShop", "SolvexWorkShop.csproj", "{18D1CC4D-7CCA-4998-B42F-F4614AEF05DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolvexWorkShop", "SolvexWorkShop.csproj", "{18D1CC4D-7CCA-4998-B42F-F4614AEF05DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolvexWorkShop.Core", "..\SolvexWorkShop.Core\SolvexWorkShop.Core.csproj", "{7747C24A-8AE6-474C-9A6A-A23724FE71E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolvexWorkShop.Core", "..\SolvexWorkShop.Core\SolvexWorkShop.Core.csproj", "{7747C24A-8AE6-474C-9A6A-A23724FE71E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolvexWorkshop.Model", "..\SolvexWorkshop.Model\SolvexWorkshop.Model.csproj", "{BE05C413-897D-47F3-9C7D-9F67C9099BD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolvexWorkshop.Model", "..\SolvexWorkshop.Model\SolvexWorkshop.Model.csproj", "{BE05C413-897D-47F3-9C7D-9F67C9099BD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolvexWorkShop.Bl", "..\SolvexWorkShop.Bl\SolvexWorkShop.Bl.csproj", "{1E12A2E1-35F4-4DBC-ABD0-2A3A1FDDA002}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolvexWorkShop.Bl", "..\SolvexWorkShop.Bl\SolvexWorkShop.Bl.csproj", "{1E12A2E1-35F4-4DBC-ABD0-2A3A1FDDA002}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolvexWorkShop.Services", "..\SolvexWorkShop.Services\SolvexWorkShop.Services.csproj", "{40A8AF5F-4651-4EF0-A395-BB1824B02663}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolvexWorkShop.Services", "..\SolvexWorkShop.Services\SolvexWorkShop.Services.csproj", "{40A8AF5F-4651-4EF0-A395-BB1824B02663}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolvexWorkShop.Tests", "..\SolvexWorkShop.Tests\SolvexWorkShop.Tests.csproj", "{9350017C-A3BD-424A-BAEC-FF93643577C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolvexWorkShop.Services.Tests", "..\SolvexWorkShop.Services.Tests\SolvexWorkShop.Services.Tests.csproj", "{94CF1144-1415-45E4-8D8E-BEBE5BF6F653}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{9350017C-A3BD-424A-BAEC-FF93643577C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9350017C-A3BD-424A-BAEC-FF93643577C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9350017C-A3BD-424A-BAEC-FF93643577C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94CF1144-1415-45E4-8D8E-BEBE5BF6F653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94CF1144-1415-45E4-8D8E-BEBE5BF6F653}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94CF1144-1415-45E4-8D8E-BEBE5BF6F653}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94CF1144-1415-45E4-8D8E-BEBE5BF6F653}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
